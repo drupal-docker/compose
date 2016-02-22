@@ -1,0 +1,11 @@
+database:
+  image: drupaldocker/mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: secret_password
+
+php:
+  image: drupaldocker/php:apache
+  links:
+    - database:db
+  ports:
+    - 80

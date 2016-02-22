@@ -1,0 +1,32 @@
+dbdata:
+  image: drupaldocker/mariadb
+  entrypoint: /bin/echo
+  command: Database data-only container
+
+filedata:
+  image: drupaldocker/php:apache
+  entrypoint: /bin/echo
+  command: Files data-only container
+
+database:
+  image: drupaldocker/mariadb
+  volumes_from:
+    - dbdata
+  environment:
+    MYSQL_ALLOW_EMPTY_PASSWORD: true
+
+php:
+  image: drupaldocker/php:apache
+  links:
+    - database:db
+  volumes_from:
+    - filedata
+  ports:
+    - 80
+
+drush:
+  image: drupaldocker/drush
+  links:
+    - database:db
+  volumes_from:
+    - filedata
