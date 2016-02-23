@@ -1,0 +1,21 @@
+sudo: required
+
+services:
+  - docker
+
+env:
+  matrix:
+    - EXAMPLE="simple"
+    - EXAMPLE="data-container"
+    - EXAMPLE="drush"
+
+before_script:
+  - docker version
+  - docker-compose version
+  - cd examples/${EXAMPLE}
+
+script:
+  - tesh.sh
+
+after_script:
+  - docker ps -a
