@@ -17,6 +17,6 @@ multi-container app with docker-compose.
 
 Available examples:
 
-1. [Simple](/zaporylie/compose/tree/master/examples/simple) - MariaDB + php:apache
-1. [Data containers](/zaporylie/compose/tree/master/examples/data-containers) - using Data Volume Containers
-1. [Drush](/zaporylie/compose/tree/master/examples/drush) - connect drush container to your
+1. [Simple](/examples/simple) - MariaDB + php:apache
+1. [Data containers](/examples/data-containers) - Data Volume Containers
+1. [Drush](/examples/drush) - run drush container on demand
