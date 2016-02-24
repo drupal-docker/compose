@@ -15,7 +15,8 @@ before_script:
   - cd examples/${EXAMPLE}
 
 script:
-  - tesh.sh
+  - docker-compose config
+  # - ./tesh.sh
 
 after_script:
   - docker ps -a
