@@ -6,7 +6,7 @@ services:
 env:
   matrix:
     - EXAMPLE="simple"
-    - EXAMPLE="data-container"
+    - EXAMPLE="data-containers"
     - EXAMPLE="drush"
 
 before_script:
