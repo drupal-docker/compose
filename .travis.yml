@@ -17,8 +17,8 @@ before_script:
 script:
   # There's nothing we can test now since docker-compose is outdated.
   #- docker-compose up -d
-  #- sleep 10
-  #- if [[ -e "./tesh.sh" ]] ; then ./tesh.sh ; else echo "Missing test" ; fi
+  - sleep 10
+  - if [[ -e "./tesh.sh" ]] ; then ./tesh.sh ; else echo "Missing test" ; fi
 
 after_script:
   - docker ps -a
