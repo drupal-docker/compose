@@ -5,9 +5,9 @@ services:
 
 env:
   matrix:
-    - EXAMPLE="simple"
-    - EXAMPLE="data-container"
-    - EXAMPLE="drush"
+    - EXAMPLE="01-simple"
+    - EXAMPLE="02-data-container"
+    - EXAMPLE="03-drush"
 
 before_script:
   - docker version
@@ -15,8 +15,9 @@ before_script:
   - cd examples/${EXAMPLE}
 
 script:
-  - docker-compose config
-  # - ./tesh.sh
+  - docker-compose up -d
+  - sleep 10
+  - [[ -e "./tesh.sh" ]] && ./tesh.sh || echo "Missing test"
 
 after_script:
   - docker ps -a
