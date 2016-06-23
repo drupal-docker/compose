@@ -8,6 +8,7 @@ env:
     - EXAMPLE="01-simple"
     - EXAMPLE="02-data-containers"
     - EXAMPLE="03-drush"
+    - EXAMPLE="04-networks"
 
 before_script:
   - docker version

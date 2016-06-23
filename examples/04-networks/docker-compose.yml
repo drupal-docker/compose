@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  db:
+    image: drupaldocker/mariadb
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'True'
+    networks:
+      - back-tier
+  php:
+    image: drupaldocker/php
+    networks:
+      - back-tier
+      - front-tier
+  app:
+    image: drupaldocker/nginx
+    networks:
+      - front-tier
+    ports:
+      - 80
+  drush:
+    image: drupaldocker/drush
+    networks:
+      - back-tier
+    volumes_from:
+      - php
+
+networks:
+  front-tier:
+    driver: bridge
+  back-tier:
+    driver: bridge
