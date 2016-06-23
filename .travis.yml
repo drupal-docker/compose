@@ -17,7 +17,7 @@ before_script:
 script:
   - docker-compose up -d
   - sleep 10
-  - [[ -e "./tesh.sh" ]] && ./tesh.sh || echo "Missing test"
+  - if [[ -e "./tesh.sh" ]] ; then ./tesh.sh ; else echo "Missing test" ; fi
 
 after_script:
   - docker ps -a
