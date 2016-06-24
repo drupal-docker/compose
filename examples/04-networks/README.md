@@ -9,7 +9,7 @@ well.
 ## Networks for the rescue!
 
 Docker introduce networking tool which soon will take over linking functionality.
-You can create networks and add containers to those networks co they can connect
+You can create networks and add containers to those networks so they can connect
 each other. Let's build simple app with two networks:
 
 - back-tier
