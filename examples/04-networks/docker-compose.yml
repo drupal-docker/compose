@@ -18,6 +18,8 @@ services:
       - front-tier
     ports:
       - 80
+    volumes_from:
+      - php
   drush:
     image: drupaldocker/drush
     networks:
